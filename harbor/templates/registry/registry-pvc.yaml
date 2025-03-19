@@ -27,7 +27,7 @@ spec:
     {{- if eq "-" $registry.storageClass }}
   storageClassName: ""
     {{- else }}
-  storageClassName: {{ $registry.storageClass }}
+  storageClassName: gp3-csi
     {{- end }}
   {{- end }}
 {{- end }}
