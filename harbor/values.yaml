@@ -136,7 +136,10 @@ persistence:
       storageClass: ""
       subPath: ""
       accessMode: ReadWriteOnce
-      size: 5Gi
+      size: 100Gi
+      storageClass: gp3-csi
+      imageChartStorage:
+    type: "filesystem"
       annotations: {}
     jobservice:
       jobLog:
