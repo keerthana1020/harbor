@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}-harbor-registry-pv
+  labels:
+    app: harbor
+    component: registry
+    release: {{ .Release.Name }}
+spec:
+  capacity:
+    storage: {{ .Values.persistence.persistentVolumeClaim.registry.size }}
+  volumeMode: Filesystem
+  accessModes:
+    - {{ .Values.persistence.persistentVolumeClaim.registry.accessMode }}
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: gp3-csi
+  csi:
+    driver: ebs.csi.aws.com
+    volumeHandle: <ebs-volume-id> # Replace with actual EBS volume ID if pre-provisioned
+    fsType: ext4
