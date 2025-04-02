@@ -227,7 +227,7 @@ persistence:
       #v4auth: true
       #chunksize: "5242880"
       #rootdirectory: /s3/object/name/prefix
-      #storageclass: STANDARD
+      #storageclass: gp3-csi
       #multipartcopychunksize: "33554432"
       #multipartcopymaxconcurrency: 100
       #multipartcopythresholdsize: "33554432"
