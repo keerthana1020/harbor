@@ -25,7 +25,7 @@ spec:
       storage: {{ $registry.size }}
   {{- if $registry.storageClass }}
     {{- if eq "-" $registry.storageClass }}
-  storageClassName: ""
+  storageClassName: gp3-csi
     {{- else }}
   storageClassName: gp3-csi
     {{- end }}
