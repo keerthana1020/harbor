@@ -219,7 +219,7 @@ spec:
       accessModes: [{{ $trivy.accessMode | quote }}]
       {{- if $trivy.storageClass }}
       {{- if (eq "-" $trivy.storageClass) }}
-      storageClassName: ""
+      storageClassName: gp3-csi
       {{- else }}
       storageClassName: "{{ $trivy.storageClass }}"
       {{- end }}
